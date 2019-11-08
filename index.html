@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Shower Presentation Engine</title>
+    <title>Presentation: Singlepage architect and ES6</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="node_modules/@shower/ribbon/styles/styles.css">
+    <!-- <link rel="stylesheet" href="shower/themes/ribbon/styles/styles.css"> -->
+    <link rel="stylesheet" href="shower/themes/material/styles/styles.css">
+
     <style>
         .shower {
             --slide-ratio: calc(16 / 9);
@@ -14,29 +16,45 @@
 <body class="shower list">
 
     <header class="caption">
-        <h1>Shower Presentation Engine</h1>
-        <p>Yours Truly, Famous Inc.</p>
+        <h1>Singlepage architect and ES6</h1>
     </header>
 
     <section class="slide" id="cover">
-        <h2>Shower Presentation Engine</h2>
-        <p>Brought to you by <a href="http://pepelsbey.net">Vadim Makeev</a></p>
-        <figure>
-            <img class="cover" src="pictures/cover.jpg" alt="Hands on the orange typewriter in a park">
-            <figcaption class="copyright right white">
-                <a href="http://fiftyfootshadows.net/">© John Carey</a>
-            </figcaption>
-        </figure>
+       <div>
+            <figure style="position: absolute; top: 48px; left: 50%; transform: translateX(-50%);">
+                <img src="pictures/acropolium-logo.svg" alt="Acropolium logo" width="160" class="place top">
+            </figure>
+       </div>
+       <div>
+           <h2>
+                Singlepage architect
+           </h2>
+       </div>
+       <div>
+        <p class="place bottom">JavaScript Course, 2019</p>
+       </div>
+        
+
         <style>
+            #cover{
+                background-image: url('pictures/bgStart.jpg');
+                display: flex;
+                flex-direction: column;
+            }
+            #cover::after{
+                display: none;
+            }
             #cover h2 {
-                margin: 30px 0 0;
+                text-align: center;
+                margin: 150px 0 0;
                 color: white;
                 text-align: center;
                 font-size: 70px;
+                font-weight: bold;
             }
 
             #cover p {
-                margin: 10px 0 0;
+                
                 text-align: center;
                 color: white;
                 font-style: italic;
@@ -49,24 +67,57 @@
         </style>
     </section>
 
-    <section class="slide">
-        <h2>Shower key features</h2>
-        <ol>
-            <li>Built on HTML, CSS and JavaScript</li>
-            <li>Works in all modern browsers</li>
-            <li>Themes are separated from engine</li>
-            <li>Fully keyboard accessible</li>
-            <li>Printable to PDF</li>
-        </ol>
-        <p class="note">Shower ['ʃəuə] noun. A person or thing that shows.</p>
+    <section class="slide title-block">
+        <h2 class="shout brand-title"><span>Layers of Single Page Applications</span></h2>
+        <style>
+            .slide .shout::after {
+                display: none;
+            }
+            .title-block{
+                background: #181C20!important;
+            }
+            .brand-gray {
+                background-color: #101316;
+            }
+
+            h2.brand-title {
+
+                color: #fff;
+            }
+
+            h2.brand-title span {
+                position: relative;
+                font-size: 52px;
+                font-weight: bold;
+                position: relative;
+            }
+
+            h2.brand-title span:before {
+                content: '';
+                position: absolute;
+                display: block;
+                width: 32px;
+                height: 32px;
+                top: 18px;
+                left: 101%;
+                background-image: url(./pictures/star.svg);
+                background-size: contain;
+                background-repeat: no-repeat;
+            }
+        </style>
     </section>
 
     <section class="slide">
-        <h2>Plain text on your slides</h2>
-        <p>Lorem ipsum dolor sit amet, consectetur <a href="#4">adipisicing</a> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, <em>quis nostrud</em> exercitation ullamco laboris <strong>nisi ut aliquip</strong> ex ea commodo consequat. Duis aute irure <i>dolor</i> in reprehenderit in voluptate velit esse cillum <b>dolore</b> eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in <code>&lt;culpa&gt;</code> qui officia deserunt mollit anim id est laborum.</p>
+            <h2 style="margin-bottom: 25px;">The layers of single page applications</h2>
+            <ul style="font-size: 24px;">
+                <li class="next">View</li>
+                <li class="next">Application service</li>
+                <li class="next">Store</li>
+                <li class="next">Domain</li>
+            </ul>
     </section>
 
-    <section class="slide">
+    <!-- <section class="slide">
         <h2>Two columns if you like</h2>
         <div class="columns two">
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
@@ -88,123 +139,2348 @@
             </li>
             <li>Look, seven rows exactly!</li>
         </ol>
-    </section>
+    </section> -->
 
-    <section class="slide">
-        <h2>Serious citations</h2>
-        <figure>
-            <blockquote>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia.</p>
-            </blockquote>
-            <figcaption>Marcus Tullius Cicero</figcaption>
-        </figure>
-    </section>
-
-    <section class="slide">
-        <h2>Code samples</h2>
-        <pre>
-            <code>&lt;!DOCTYPE html&gt;</code>
-            <code class="mark">&lt;html lang="en"&gt;</code>
-            <code><mark>&lt;head&gt;</mark> <span class="comment">&lt;!--Comment--&gt;</span></code>
-            <code>    &lt;title&gt;Shower&lt;/title&gt;</code>
-            <code>    &lt;meta charset="<mark class="important">UTF-8</mark>"&gt;</code>
-            <code>    &lt;link rel="stylesheet" href="screen.css"&gt;</code>
-            <code><mark>&lt;/head&gt;</mark></code>
-        </pre>
-    </section>
-
-    <section class="slide">
-        <h2>Even tables</h2>
-        <table>
-        <tr>
-            <th scope="col">Locavore</th>
-            <th>Umami</th>
-            <th>Helvetica</th>
-            <th>Vegan</th>
-        </tr>
-        <tr>
-            <th scope="row">Fingerstache</th>
-            <td>Kale</td>
-            <td>Chips</td>
-            <td>Keytar</td>
-        </tr>
-        <tr>
-            <th scope="row">Sriracha</th>
-            <td>Gluten-free</td>
-            <td>Ennui</td>
-            <td>Keffiyeh</td>
-        </tr>
-        <tr>
-            <th scope="row">Thundercats</th>
-            <td>Jean</td>
-            <td>Shorts</td>
-            <td>Biodiesel</td>
-        </tr>
-        <tr>
-            <th scope="row">Terry</th>
-            <td>Richardson</td>
-            <td>Swag</td>
-            <td>Blog</td>
-        </tr>
-        </table>
-        <p>It’s good to have information organized.</p>
-    </section>
-
-    <section class="slide" id="picture">
-        <h2>Pictures</h2>
-        <figure>
-            <img class="cover" src="pictures/picture.jpg" alt="Orange typewriter on a wooden table close-up">
-            <figcaption class="copyright right white">
-                <a href="http://fiftyfootshadows.net/">© John Carey</a>
-            </figcaption>
-        </figure>
-        <style>
-            #picture h2 {
-                color: white;
-            }
-        </style>
-    </section>
-
-    <section class="slide">
-        <h2 class="shout shrink">You can even shout this way</h2>
-    </section>
-
-    <section class="slide">
-        <h2>Inner navigation</h2>
-        <ol>
-            <li>Lets you reveal list items one by one</li>
-            <li class="next">To keep some key points</li>
-            <li class="next">In secret from audience</li>
-            <li class="next">But it will work only once</li>
-            <li class="next">Nobody wants to see the same joke twice</li>
-        </ol>
-    </section>
-
-    <section class="slide" id="see-more">
-        <h2 class="shout">
-            <img src="pictures/logo.svg" alt="Shower logo">
-            <a href="https://github.com/shower/shower">See more on GitHub</a>
+    <section class="slide tips">
+        
+        <h2>
+                Every successful project needs<strong> a clear</strong> architecture, which <strong>is understood </strong>by all team members
         </h2>
         <style>
-            #see-more h2 {
-                font-size: 100px
+            .tips{
+                display: flex;
             }
-
-            #see-more img {
-                width: 0.72em;
-                height: 0.72em;
+            .tips h2{
+                margin: auto;
+                color:#555;
+            }
+            .tips h2 strong{ 
+                color:#222;
             }
         </style>
     </section>
 
-    <footer class="badge">
-        <a href="https://github.com/shower/shower">Fork me on GitHub</a>
-    </footer>
+    <section class="slide">
+            <h2 style="margin-bottom: 28px;">View</h2>
+            <ul style="font-size: 24px;">
+                <li class="next">UI layer (buttons, forms, etc)</li>
+                <li class="next">emmit new state through events</li>
+                <li class="next">receive state from store</li>
+                <li class="next">send new state to store</li>
+            </ul>
+    </section>
+
+    <section class="slide">
+            <h2 style="margin-bottom: 28px;">Applicstion service</h2>
+            <ul style="font-size: 24px;">
+                <li class="next">project (interpet ) state</li>
+                <li class="next">orchestrate external peration</li>
+            </ul>
+    </section>
+    <section class="slide">
+            <h2 style="margin-bottom: 28px;">Store</h2>
+            <ul style="font-size: 24px;">
+                <li class="next">hold the state</li>
+                <li class="next">state is immutable</li>
+                <li class="next">notifies subscribers about state changes</li>
+            </ul>
+    </section>
+    <section class="slide">
+            <h2 style="margin-bottom: 28px;">Domain</h2>
+            <ul style="font-size: 24px;">
+                <li class="next">hold the business logic</li>
+                <li class="next">agnostic to view layer</li>
+            </ul>
+    </section>
+
+    <section class="slide">
+            <h2 style="margin-bottom: 28px;">Who use SAP ?</h2>
+            <ul style="font-size: 24px;">
+                <li class="next">Gmail</li>
+                <li class="next">Google Maps</li>
+                <li class="next">Google Drive</li>
+                <li class="next">Twitter</li>
+                <li class="next">Facebook</li>
+                <li class="next">Twitter</li>
+                
+            </ul>
+    </section>
+
+    <section class="slide title-block">
+            <h2 class="shout brand-title"><span>How SPAs Work</span></h2>
+            <style>
+                .slide .shout::after {
+                    display: none;
+                }
+                .title-block{
+                    background: #181C20!important;
+                }
+                .brand-gray {
+                    background-color: #101316;
+                }
+    
+                h2.brand-title {
+                    top: 40%!important;
+                    text-align: center;
+                    padding: 0!important;
+                    color: #fff;
+                }
+    
+                h2.brand-title span {
+                    position: relative;
+                    font-size: 52px;
+                    font-weight: bold;
+                    position: relative;
+                }
+    
+                h2.brand-title span:before {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    width: 32px;
+                    height: 32px;
+                    top: 18px;
+                    left: 101%;
+                    background-image: url(./pictures/star.svg);
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                }
+            </style>
+        </section>
+
+        <section class="slide">
+                <h2 style="margin-bottom: 28px;">How SPAs Work</h2>
+                <p>SPAs can work in two ways:</p>
+                <ul style="font-size: 24px;">
+                    <li class="next">All the necessary code (HTML, CSS, and JavaScript) is received in a single page load, or,</li>
+                    <li class="next">The appropriate code is dynamically loaded as needed in response to user actions.</li>                  
+                </ul>
+                <style>
+                    .slide p {
+                        color:#555;
+                    }
+                </style>
+        </section>
+
+        <section class="slide">
+                    <h2>Traditional page lifecycle vs SPA lifecycle</h2>
+                    <div class="two-colum-block">
+                        <div>
+                            <img src="pictures/traditional.png" alt="image traditional page lifecycle">
+                        </div>
+                        <div>
+                                <img src="pictures/spaLife.png" alt="spa  page lifecycle">
+                        </div>
+                    </div>
+                    <style>
+                    .slide h2{
+                        font-size: 44px;
+                    }
+                    .two-colum-block{
+                        display: flex;
+                        margin: 35px 0;
+                    }
+                    .two-colum-block div{
+                        width: 50%;
+                    }
+                    .two-colum-block div img{
+                        width: 100%;
+                    }
+                    </style>
+        </section>
+        <section class="slide">
+                <h2 style="margin-bottom: 26px;">Pros of SPAs:</h2>
+                <p class="good">Good parts</p>
+                <ul style="font-size: 20px;">
+                    <li class="next">Fast and fluid response time — as discussed above, the user doesn’t have to wait for a new page to be loaded from the server</li>
+                    <li class="next">Simple to build and debug — the developer does not have to write code to render pages on the server</li>    
+                    <li class="next">
+                        Easy to deploy in production — SPAs load just one index.html file, with a CSS bundle and a JavaScript bundle
+                    </li>   
+                    <li class="next">
+                        Smooth transition to mobile development — since front-end and back-end development are decoupled, it is simpler to develop a mobile interface from a SPA
+                    </li>           
+                </ul>
+                <style>
+                    .slide .good{
+                        color: #36ea21;
+                        font-weight: bold;
+                        margin-bottom: 5px;
+                    }
+                </style>
+        </section>
+        <section class="slide">
+                <h2 style="margin-bottom: 26px;">Cons of SPAs</h2>
+                <p class="bad">Bad parts</p>
+                <ul style="font-size: 20px;">
+                    <li class="next">
+                            SEO implications - most search engines didn’t support client-side rendering when crawling websites
+                    </li>    
+                    <li class="next">
+                            Long initial wait time — the initial load of the page can be slow when you use heavy front-end frameworks ( Vue and React lightweight and flexible)
+                    </li>   
+                    <li class="next">
+                            Still need to wait for data — users still have to wait for data to come back via AJAX/XHR in JSON after the skeleton page has loaded
+                    </li>           
+                </ul>
+                <style>
+                    .slide .bad{
+                        color: #ef1e43;
+                        font-weight: bold;
+                        margin-bottom: 5px;
+                    }
+                </style>
+        </section>
+        <section class="slide title-block">
+                <h2 class="shout brand-title"><span>Top 3 Best JavaScript Frameworks for 2019</span></h2>
+                <style>
+                    .slide .shout::after {
+                        display: none;
+                    }
+                    .title-block{
+                        background: #181C20!important;
+                    }
+                    .brand-gray {
+                        background-color: #101316;
+                    }
+        
+                    h2.brand-title {
+                        top: 40%!important;
+                        text-align: center;
+                        padding: 0!important;
+                        color: #fff;
+                    }
+        
+                    h2.brand-title span {
+                        position: relative;
+                        font-size: 42px;
+                        font-weight: bold;
+                        position: relative;
+                    }
+        
+                    h2.brand-title span:before {
+                        content: '';
+                        position: absolute;
+                        display: block;
+                        width: 32px;
+                        height: 32px;
+                        top: 10px;
+                        left: 101%;
+                        background-image: url(./pictures/star.svg);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                    }
+                </style>
+            </section>
+
+            <section class="slide tips">
+        
+                    <img src="pictures/logos.png" alt="frameworks logos">
+                    <style>
+                        .tips{
+                            display: flex;
+                        }
+                        .tips img{
+                            display: block;
+                            margin: auto;
+                            width: 100%;
+                        }
+                    </style>
+                </section>
+
+            <section class="slide intro">
+                <h2>
+                    Angular
+                </h2>
+                <div>
+                    <img src="pictures/AngularLogo.svg" alt="angular logo">
+                </div>
+                <p>
+                        Angular is a JavaScript-based open-source front-end web framework mainly maintained by Google and by a community
+                </p>
+
+                <style>
+                    .intro h2{
+                        text-align: center;
+                        font-size:50px;
+                    }
+                    .intro div{
+                        width: 120px;
+                        margin: 0 auto;
+                        text-align: center;
+                    }
+                    .intro div img{
+                        width: 100%;
+                    }
+                </style>
+            </section>
+            <section class="slide">
+                    <h2 style="margin-bottom: 26px;">Pros of Angular</h2>
+                    <ul style="font-size: 20px;">
+                        <li class="next">
+                            <strong>Documentation: </strong>
+                                Angular comes with a detailed documentation. This makes it easier for new developers to pick up the framework
+                        </li>    
+                        <li class="next">
+                                <strong>Build Optimizer:</strong>
+                                 The Build Optimizer in Angular 5 removes all the unnecessary runtime code.
+                        </li>   
+                        <li class="next">
+                            <strong>Router Hooks:</strong> Router cycles can now be tracked from the start of running guards till the activation has been completed.
+                        </li>           
+                    </ul>
+
+            </section>
+            <section class="slide">
+                    <h2 style="margin-bottom: 26px;">Cons of Angular</h2>
+                    <ul style="font-size: 20px;">
+                        <li class="next">
+                            <strong>Complex Syntax:</strong>
+                            include a complicated set of syntax errors.
+                        </li>    
+    
+                        <li class="next">
+                            <strong>Migration:</strong> 
+                             Migrating the app from old versions of Angular can be an issue, especially for large-scale applications.
+                        </li>           
+                    </ul>
+
+            </section>
+<!--  ===========react ============ -->
+<section class="slide intro">
+        <h2>
+            React.JS
+        </h2>
+        <div>
+            <img src="pictures/reactLogo.png" alt="react logo">
+        </div>
+        <p>
+                React is another popular JavaScript library which powers Facebook. Developed and open sourced by Facebook in 2013, it quickly rose to prominence for the development of huge web applications that involve dynamic handling of data.
+        </p>
+
+        <style>
+            .intro h2{
+                text-align: center;
+                font-size:50px;
+            }
+            .intro div{
+                width: 200px;
+                margin: 0 auto;
+                text-align: center;
+            }
+            .intro div img{
+                width: 100%;
+            }
+        </style>
+    </section>
+    <section class="slide">
+            <h2 style="margin-bottom: 26px;">Pros of React.js</h2>
+            <ul style="font-size: 20px;">
+                <li class="next">
+                    <strong>Ease of Learning:</strong>
+                     React showcases simplicity in terms of its syntax that involves a lot of HTML writing skills
+                </li>    
+                <li class="next">
+                        <strong>Data and Presentation:</strong>
+                         React provides total separation of data and presentation layers.
+                </li>   
+                <li class="next">
+                    <strong>Reusable Components: </strong> 
+                    Facebook has developed React in a way that it provides the ability to reuse code components of any level anytime.
+                </li>           
+            </ul>
+
+    </section>
+    <section class="slide">
+            <h2 style="margin-bottom: 26px;">Cons of React.js</h2>
+            <ul style="font-size: 20px;">
+                <li class="next">
+                    <strong>SEO Issues:</strong>
+                     Users have reported issues regarding SEO since search engines poorly index dynamic web-pages with client-side rendering.
+                </li>    
+
+                <li class="next">
+                    <strong>JSX as a Barrier:</strong> 
+                     React actively makes use of JSX, which is a syntax extension that allows mixing of HTML with JavaScript.
+                </li>           
+                <li class="next">
+                        <strong>High Development Pace: </strong> 
+                        The environment of React is very dynamic and keeps on changing constantly.
+                </li>  
+            </ul>
+
+    </section>
+<!--  =========== Vue ============ -->
+<section class="slide intro">
+        <h2>
+            Vue.js
+        </h2>
+        <div>
+            <img src="pictures/vueLogo.png" alt="vue logo">
+        </div>
+        <p>
+                Vue became the most  project in 2018, a feat that has followed the framework in 2018. Created by Evan You who worked on numerous Angular.js projects during his time at Google, Vue.js is a lightweight counterpart of Angular.js
+        </p>
+
+        <style>
+            .intro h2{
+                text-align: center;
+                font-size:50px;
+            }
+            .intro div{
+                width: 150px;
+                margin: 0 auto;
+                text-align: center;
+            }
+            .intro div img{
+                width: 100%;
+            }
+        </style>
+    </section>
+    <section class="slide">
+            <h2 style="margin-bottom: 26px;">Pros of Vue.js</h2>
+            <ul style="font-size: 20px;">
+                <li class="next">
+                    <strong>Size:</strong>
+                     This is one of the best highlights of Vue. The production ready build of Vue is surprisingly lightweight — just 18kb after zipping
+                </li>    
+                <li class="next">
+                    <strong>Adaptability: </strong>
+                    Most of the developers who adapt Vue switch to it from other major frameworks.
+                </li>   
+                <li class="next">
+                    <strong>Readability:</strong> 
+                     Vue is quite easy to read and understand for developers since functions are highly accessible. Additionally, HTML blocks handling can be optimized with a usage of different components.
+                </li>           
+            </ul>
+
+    </section>
+    <section class="slide">
+            <h2 style="margin-bottom: 26px;">Cons of Vue.js</h2>
+            <ul style="font-size: 20px;">
+                <li class="next">
+                    <strong>Quick Evolution:</strong>
+                     While a swift development phase is good for a framework is good in terms of capabilities, the learning curve keeps on changing.
+                </li>    
+
+                <li class="next">
+                    <strong>(Over-)Flexibility</strong> 
+                    Sure it’s nice to have flexibility and many options within a framework that you’re working with. However, when working on a bigger project with many developers involved, this may become an issue. 
+                </li>           
+            </ul>
+    </section>    
+
+    <section class="slide" id="cover">
+            <div>
+                 <figure style="position: absolute; top: 48px; left: 50%; transform: translateX(-50%);">
+                     <img src="pictures/acropolium-logo.svg" alt="Acropolium logo" width="160" class="place top">
+                 </figure>
+            </div>
+            <div>
+                <h2>
+                     NPM
+                </h2>
+            </div>
+            <div>
+             <p class="place bottom">JavaScript Course, 2019</p>
+            </div>
+             
+     
+             <style>
+                 #cover{
+                     background-image: url('pictures/bgStart.jpg');
+                     display: flex;
+                     flex-direction: column;
+                 }
+                 #cover::after{
+                     display: none;
+                 }
+                 #cover h2 {
+                     text-align: center;
+                     margin: 150px 0 0;
+                     color: white;
+                     text-align: center;
+                     font-size: 70px;
+                     font-weight: bold;
+                 }
+     
+                 #cover p {
+                     
+                     text-align: center;
+                     color: white;
+                     font-style: italic;
+                     font-size: 20px;
+                 }
+     
+                 #cover p a {
+                     color: white;
+                 }
+             </style>
+         </section>
+         
+
+         <section class="slide title-block npm">
+                <h2 class="shout brand-title"><span>npm is the world's largest Software Registry</span></h2>
+                <style>
+                    .slide .shout::after {
+                        display: none;
+                    }
+                    .title-block{
+                        background: #181C20!important;
+                    }
+                    .brand-gray {
+                        background-color: #101316;
+                    }
+        
+                    h2.brand-title {
+                        top: 40%!important;
+                        text-align: center;
+                        padding: 0!important;
+                        color: #fff;
+                    }
+        
+                   .npm h2.brand-title span {
+                        position: relative;
+                        font-size: 32px;
+                        font-weight: bold;
+                        position: relative;
+                    }
+        
+                    .npm h2.brand-title span:before {
+                        content: '';
+                        position: absolute;
+                        display: block;
+                        width: 22px;
+                        height: 22px;
+                        top: 12px;
+                        left: 101%;
+                        background-image: url(./pictures/star.svg);
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                    }
+                </style>
+            </section>
+            <section class="slide fun">
+                <img src="pictures/wonka.jpg" alt="">
+                <style>
+                    .fun{
+                        display: flex;
+                        padding: 30px;
+                    }
+                    .fun img {
+                        display: block;
+                        margin: 0 auto;
+                    }
+                </style>
+            </section>
+
+            <section class="slide tips-npm">
+        
+                    <h2>
+                          <strong>But</strong>   before we can start using npm, we first have to install  <strong> Node.js</strong> on our system. Let’s do that now…
+                    </h2>
+                    <style>
+                        .tips-npm{
+                            display: flex;
+                        }
+                        .tips-npm h2{
+                            margin: auto;
+                            color:#555;
+                        }
+                        .tips-npm h2 strong{ 
+                            color:#222;
+                        }
+                    </style>
+                </section>
+                <section class="slide intro-node">
+                        <h2>
+                                Installing Node.js
+                        </h2>
+                        <p>
+                                Head to the Node.js download page and grab the version you need.
+                        </p>
+                        <div>
+                            <img src="pictures/node.png" alt="vue logo">
+                        </div>
+                
+                        <style>
+                            .intro-node h2{
+                                text-align: center;
+                                font-size:50px;
+                            }
+                            .intro-node div{
+                                width: 550px;
+                                margin: 0 auto;
+                                text-align: center;
+                            }
+                            .intro-node div img{
+                                width: 100%;
+                            }
+                        </style>
+                    </section>
+            <section class="slide">
+                    <h2 style="margin-bottom: 26px;">Let’s see where node was installed and check the version</h2>
+                    <ul style="font-size: 20px;">
+                        <li class="next">
+                                <code>$ which node</code>
+                        </li>    
+                        <li class="next">
+                                <code>$ node --version</code>
+                        </li>
+                        <li class="next">
+                                To verify that your installation was successful let’s give Node’s REPL a try.
+                        </li>          
+                        <li class="next">
+                                <code>$ node <br>
+                                > console.log('Node is running');<br>
+                                Node is running</code>
+                        </li>
+                    </ul>
+        
+            </section>     
+            <section class="slide">
+                    <h2 style="margin-bottom: 26px;">Initializing A Project with npm</h2>
+                    <p>
+                            If you already have Node and npm, and you want to get on to building your project, run the <code>npm init</code> command. This will trigger the initialization of your project.  
+                    </p>
+            </section>      
+            <section class="slide">
+                    <h2 style="margin-bottom: 26px;">Installing npm Modules</h2>
+                    <p>
+                            A package in node.js contains all the files you need for a module. Modules are JavaScript libraries you can include in your project.
+                    </p>
+                    <p>  
+                        <code>
+                                $ npm install `module name`
+                        </code>
+                        <br>
+                        or
+                        <br>
+
+                        <code>
+                                $ npm i  `module name`
+                        </code>
+                    </p>
+            </section>   
+            
+  
+            <section class="slide">
+                    <h2 style="margin-bottom: 26px;">Installing npm Modules</h2>
+                    <p>
+                        For example, if you want to install Express – the most used and most well known node.js web framework, you could run the following command:
+                    </p>
+                    <p>  
+                        <code>
+                            $ npm install express
+                        </code>
+                    </p>
+                    <p>
+                        The command above will install the express module into /node_modules in the current directory.
+                    </p>
+            </section>       
+            <section class="slide">
+                    <h2 style="margin-bottom: 26px;">npm --save-dev vs --save</h2>
+                    <ul style="font-size: 20px;">
+                            <li class="next">
+                                    <code>
+                                            npm install [package_name] --save-dev
+                                    </code>
+                                    or chose
+                                    <code>
+                                            npm install [package_name] --save
+                                    </code>
+                                </li> 
+                            <li class="next">
+                                <code>
+                                        --save-dev
+                                </code>
+                                     is used to save the package for development purpose. Example: unit tests, minification.                               
+                            </li>    
+                            <li class="next">
+                                    <code>
+                                        --save
+                                    </code> is used to save the package required for the application to run.                               
+                            </li>
+
+                        </ul>
+
+
+            </section> 
+            
+            <section class="slide">
+                    <h2 style="margin-bottom: 26px;">Updating a Package</h2>
+                    <p>
+                            Let’s check if there’s an update for the Express package:
+                    </p>
+                    <p>  
+                        <code>
+                            $ npm outdated
+                        </code>
+                    </p>
+            </section>  
+           
+            <section class="slide">
+                    <h2 style="margin-bottom: 26px;"> Get a detailed list of packages that have vulnerabilities</h2>
+ 
+                    <p>  
+                        <code>
+                                $ npm run audit
+                        </code>
+                        <br>
+                        === npm audit security report ===
+                    </p>
+            </section>  
+            <section class="slide">
+                    <img class="img-f-w" src="pictures/audit.png" alt="console screen">
+                    <style>
+                        .img-f-w{
+                        width: 600px;
+                        }
+                    </style>
+
+            </section>  
+            <section class="slide end">
+                    <img class="img-f-w" src="pictures/thatsall.jpg" alt="console screen">
+
+                    <style>
+                        .end {
+                            padding: 0;
+                            text-align: center;
+                        }
+                        .end .img-f-w{
+                            width: 600px;
+                        }
+                        .end{
+                            background: #070709;
+
+                        }
+                    </style>
+
+            </section>  
+
+            <section class="slide" id="cover">
+                    <div>
+                         <figure style="position: absolute; top: 48px; left: 50%; transform: translateX(-50%);">
+                             <img src="pictures/acropolium-logo.svg" alt="Acropolium logo" width="160" class="place top">
+                         </figure>
+                    </div>
+                    <div>
+                        <h2>
+                                COMPARISON OF
+                        </h2>
+                        <h4>BUILD TOOLS / TASK RUNNERS</h4>
+                    </div>
+                    <div>
+                     <p class="place bottom">JavaScript Course, 2019</p>
+                    </div>
+                     
+             
+                     <style>
+                         #cover{
+                             background-image: url('pictures/bgStart.jpg');
+                             display: flex;
+                             flex-direction: column;
+                         }
+                         #cover::after{
+                             display: none;
+                         }
+                         #cover h2 {
+                             text-align: center;
+                             margin: 150px 0 0;
+                             color: white;
+                             text-align: center;
+                             font-size: 70px;
+                             font-weight: bold;
+                         }
+                         #cover h4 {
+                             text-align: center;
+                             margin: 0;
+                             color: white;
+                             text-align: center;
+                             font-size: 40px;
+                             font-weight: bold;
+                         }
+                         #cover p {
+                             
+                             text-align: center;
+                             color: white;
+                             font-style: italic;
+                             font-size: 20px;
+                         }
+             
+                         #cover p a {
+                             color: white;
+                         }
+                     </style>
+                 </section>
+                 
+                 <section class="slide">
+                    <h2 style="margin-bottom: 26px;">
+                        Why we use build tools?
+                    </h2>
+                    <ul style="font-size: 20px;">
+                        <li class="next">
+                            CSS auto-prefixing and preprocessing     
+                        </li>    
+                        <li class="next">
+                            Minification and concatenation   
+                        </li>
+                        <li class="next">
+                            Deleting debugger and console commands
+                        </li>          
+                        <li class="next">
+                            Launching unit tests 
+                        </li>
+                        <li class="next">
+                            And etc.
+                        </li>
+                    </ul>
+        
+            </section>           
+                 <section class="slide title-block npm">
+                        <h2 class="shout brand-title"><span>So compare Gulp vs Grunt vs Webpack</span></h2>
+                        <style>
+                            .slide .shout::after {
+                                display: none;
+                            }
+                            .title-block{
+                                background: #181C20!important;
+                            }
+                            .brand-gray {
+                                background-color: #101316;
+                            }
+                
+                            h2.brand-title {
+                                top: 40%!important;
+                                text-align: center;
+                                padding: 0!important;
+                                color: #fff;
+                            }
+                
+                           .npm h2.brand-title span {
+                                position: relative;
+                                font-size: 32px;
+                                font-weight: bold;
+                                position: relative;
+                            }
+                
+                            .npm h2.brand-title span:before {
+                                content: '';
+                                position: absolute;
+                                display: block;
+                                width: 22px;
+                                height: 22px;
+                                top: 12px;
+                                left: 101%;
+                                background-image: url(./pictures/star.svg);
+                                background-size: contain;
+                                background-repeat: no-repeat;
+                            }
+                        </style>
+                    </section>
+
+                    <!--============ grunt ======= -->
+                    <section class="slide intro">
+                            <h2>
+                                Grunt
+                            </h2>
+                            <div>
+                                <img src="pictures/gruntLog.png" alt="vue logo">
+                            </div>
+                            <p>
+                                    GruntJS is a command-line tool for front-end developers to run predefined repetitive tasks. Whereas, tasks are defined declaratively with configuration objects, which are handled by plugins to keep the core package at a sufficient size. 
+                            </p>
+                    
+                            <style>
+                                .intro h2{
+                                    text-align: center;
+                                    font-size:50px;
+                                }
+                                .intro div{
+                                    width: 150px;
+                                    margin: 0 auto;
+                                    text-align: center;
+                                }
+                                .intro div img{
+                                    width: 100%;
+                                }
+                            </style>
+                        </section>
+                        <section class="slide">
+                                <h2 style="margin-bottom: 26px;">Pros of Grunt</h2>
+                                <ul style="font-size: 20px;">
+                                    <li class="next">
+                                        <strong>Community:</strong>
+                                        1,900 of Grunt plugins. These plugins cover a wide array of build problems and are available now via the public npm repository
+                                    </li>    
+                                    <li class="next">
+                                        <strong>Flexibility: </strong>
+                                        A Grunt task is essentially just a JavaScript function, and that's it. Tasks can be defined with various levels of complexity to suit the needs of build process
+                                    </li>           
+                                </ul>
+                    
+                        </section>
+                        <section class="slide">
+                                <h2 style="margin-bottom: 26px;">Cons of Grunt</h2>
+                                <ul style="font-size: 20px;">
+
+                                    <li class="next">
+                                        <strong>Slow Evolution:</strong>
+                                        Every time npm packages are updated, you need to wait until the writer of the Grunt plugin update it
+                                    </li>    
+                    
+                                    <li class="next">
+                                        <strong>No Flexibility</strong> 
+                                        All task is designed to do specified work. If you want to extend a specified task, then you need to use some tricks to get the work done.
+                                    </li>           
+                                </ul>
+                        </section>    
+                                    
+
+                    <!--============ Gulp ======= -->
+                    <section class="slide intro">
+                        <h2>
+                            Gulp
+                        </h2>
+                        <div>
+                            <img src="pictures/gulp_generator_logo.png" alt="vue logo">
+                        </div>
+                        <p>
+                            Gulp is a cross-platform, streaming task runner that lets developers automate many development tasks. At a high level, gulp reads files as streams and pipes the streams to different tasks. These tasks are code-based and use plugins. The tasks modify the files, building source files into production files.
+                        </p>
+                
+                        <style>
+                            .intro h2{
+                                text-align: center;
+                                font-size:50px;
+                            }
+                            .intro div{
+                                width: 150px;
+                                margin: 0 auto;
+                                text-align: center;
+                            }
+                            .intro div img{
+                                width: 100%;
+                            }
+                        </style>
+                    </section>
+                    <section class="slide">
+                            <h2 style="margin-bottom: 26px;">Pros of Gulp</h2>
+                            <ul style="font-size: 20px;">
+                                <li class="next">
+                                    <strong>Large ecosystem:</strong>
+                                    Gulp plugins, while each of them can accomplish a particular task (over 2770 various plugins for different purposes)
+                                </li>    
+                                <li class="next">
+                                    <strong>Processes control: </strong>
+                                    Greater clarity of current processes and more control over the flow
+                                </li> 
+                                <li class="next">
+                                    <strong>Fast Work Processes: </strong>
+                                    Faster performance due to the stream usage and in-memory operations
+                                </li>            
+                            </ul>
+                
+                    </section>
+                    <section class="slide">
+                            <h2 style="margin-bottom: 26px;">Cons of Gulp</h2>
+                            <ul style="font-size: 20px;">
+
+                                <li class="next">
+                                    <strong>Errors:</strong>
+                                    Errors that occur inside a Gulp wrapper arean't always handled very well
+                                </li>    
+                
+                                <li class="next">
+                                    <strong>Documentation</strong> 
+                                    Documentation for Gulp plugins are typically not very robust or comprehensive
+                                </li>           
+                            </ul>
+                    </section>
+                    <section class="slide">
+                        <h2 style="margin-bottom: 26px;">Webpack vs Gulp vs Grunt: What are the differences?</h2>
+                        <p>
+                            Gulp and Grunt are JavaScript task runners, while Webpack is a bundler. Gulp and Grunt are more direct competitors to one another than either is to Webpack, though the three tools can serve many of the same functions.
+                        </p>
+                    </section>     
+    
+            <!--============ Webpack ======= -->
+            <section class="slide intro">
+                <h2>
+                    Webpack
+                </h2>
+                <div>
+                    <img src="pictures/Webpack.png" alt="vue logo">
+                </div>
+                <p>
+                    Webpack is a module bundler. This advanced tool provides developers with control over how it splits the modules, allowing them to adjust builds to particular situations and workaround solutions that don't function properly out of the box.                                                    
+                </p>
+                <style>
+                    .intro h2{
+                        text-align: center;
+                        font-size:50px;
+                    }
+                    .intro div{
+                        width: 150px;
+                        margin: 0 auto;
+                        text-align: center;
+                    }
+                    .intro div img{
+                        width: 100%;
+                    }
+                </style>
+            </section>
+            <section class="slide">
+                    <h2 style="margin-bottom: 26px;">Pros of Webpack</h2>
+                    <ul style="font-size: 20px;">
+                        <li class="next">
+                            <strong>Multiple options:</strong>
+                            Options and features right out of the box
+                        </li>    
+                        <li class="next">
+                            <strong>Cool features: </strong>
+                            Webpack-dev-server supports hot and live reloading
+                        </li>
+                        <li class="next">
+                            <strong>Easier code splitting: </strong>
+                            For example, because you know that your file Homepage.js only requires specific CSS files, Webpack could easily build a homepage.css file to greatly reduce initial file size
+                        </li>   
+                           
+                        <li class="next">
+                            <strong>Great speed benefits : </strong>
+                            For example, because you know that your file Homepage.js only requires specific CSS files, Webpack could easily build a homepage.css file to greatly reduce initial file size
+                        </li>          
+                    </ul>
+        
+            </section>
+            <section class="slide">
+                    <h2 style="margin-bottom: 26px;">Cons of Webpack</h2>
+                    <ul style="font-size: 20px;">
+
+                        <li class="next">
+                            <strong>Configuring Webpack:</strong>
+                            Configuring Webpack is a minefield for newcomers. The configuration file syntax is confusing. 
+                        </li>    
+        
+                        <li class="next">
+                            <strong>The documentation is awful</strong> 
+                            The documentation is often confusing, "webpack takes modules with dependencies". Need search information
+                        </li>           
+                    </ul>
+            </section>    
+                                                    
+                
+    <section class="slide">
+        <h2>Comparison table</h2>
+        <table>
+        <tr>
+            <th scope="col"></th>
+            <th>Webpack</th>
+            <th>Gulp</th>
+            <th>Grunt</th>
+        </tr>
+        <tr>
+            <th scope="row">Contributors</th>
+            <td>565</td>
+            <td>218</td>
+            <td>68</td>
+        </tr>
+        <tr>
+            <th scope="row">Github stars</th>
+            <td>51.7K</td>
+            <td>31.5K</td>
+            <td>12K</td>
+        </tr>
+        <tr>
+            <th scope="row">Last update</th>
+            <td>4 days ago</td>
+            <td>last month</td>
+            <td>4 month ago</td>
+        </tr>
+        <tr>
+            <th scope="row">Used by</th>
+            <td>3.6M</td>
+            <td>1.2M</td>
+            <td>720K</td>
+        </tr>
+        </table>
+    </section>
+    <section class="slide end-build">
+            <img class="img-f-w" src="pictures/chose.jpg" alt="console screen">
+
+            <style>
+                .end-build {
+                    padding: 0;
+                    text-align: center;
+                }
+                .end-build .img-f-w{
+                    width: 560px;
+                }
+                .end-build{
+                    background: #000;
+
+                }
+            </style>
+
+    </section> 
+
+
+    <section class="slide" id="cover">
+            <div>
+                 <figure style="position: absolute; top: 48px; left: 50%; transform: translateX(-50%);">
+                     <img src="pictures/acropolium-logo.svg" alt="Acropolium logo" width="160" class="place top">
+                 </figure>
+            </div>
+            <div>
+                <h2>
+                        ECMAScript 2015
+                </h2>
+                <h4>ECMAScript 2015 is also known as ES6</h4>
+            </div>
+            <div>
+             <p class="place bottom">JavaScript Course, 2019</p>
+            </div>
+             
+     
+             <style>
+                 #cover{
+                     background-image: url('pictures/bgStart.jpg');
+                     display: flex;
+                     flex-direction: column;
+                 }
+                 #cover::after{
+                     display: none;
+                 }
+                 #cover h2 {
+                     text-align: center;
+                     margin: 150px 0 0;
+                     color: white;
+                     text-align: center;
+                     font-size: 70px;
+                     font-weight: bold;
+                 }
+                 #cover h4 {
+                     text-align: center;
+                     margin: 0;
+                     color: white;
+                     text-align: center;
+                     font-size: 40px;
+                     font-weight: bold;
+                 }
+                 #cover p {
+                     
+                     text-align: center;
+                     color: white;
+                     font-style: italic;
+                     font-size: 20px;
+                 }
+     
+                 #cover p a {
+                     color: white;
+                 }
+             </style>
+         </section>
+
+         <section class="slide">
+                <h2 style="margin-bottom: 26px;">Template Literals</h2>
+                <p>
+                        Template literals are string literals allowing embedded expressions. You can use multi-line strings and string interpolation features with them. They were called "template strings" in prior editions of the ES2015 specification
+                </p>
+        </section>  
+        
+        <section class="slide">
+                <h2 style="margin-bottom: 26px;">How we were dealing with strings before ?</h2>
+                <ul style="font-size: 20px;">
+                    <li class="next">
+                        <code>
+                                let name = "Marina" ;
+                        </code>
+                    </li>    
+    
+                    <li class="next">
+                        <code>
+                                let hello = "Hello "+ name ;
+                        </code>
+                    </li>          
+                    <li class="next">
+                        <code>
+                            console.log(hello); //Hello Marina
+                        </code>
+                    </li>     
+                </ul>
+        </section>         
+                
+        <section class="slide">
+                <h2 style="margin-bottom: 26px;">Easy start with template literals</h2>
+                <ul style="font-size: 20px;">
+                    <li class="next">
+                        <code>
+                            let name = "Marina" ;
+                        </code>
+                    </li>    
+    
+                    <li class="next">
+                        <code>
+                            let hello = ` Hello ${name} .`
+                        </code>
+                    </li>          
+                    <li class="next">
+                        <code>
+                            console.log(hello); // Hello Marina .
+                        </code>
+                    </li>     
+                </ul>
+        </section>    
+        <section class="slide">
+                <h2 style="margin-bottom: 26px;">Easy start with template literals</h2>
+                <ul style="font-size: 20px;">
+                    <li class="next">
+                        <code>
+                            let name = "Marina" ;
+                        </code>
+                    </li>    
+    
+                    <li class="next">
+                        <code>
+                            let hello = ` Hello ${name} .`
+                        </code>
+                    </li>          
+                    <li class="next">
+                        <code>
+                            console.log(hello); // Hello Marina .
+                        </code>
+                    </li>     
+                </ul>
+        </section>  
+        
+
+
+
+<section class="slide">
+        <h2 style="margin-bottom: 26px;">Expressions :</h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                <code>
+                    let isWorld = true ;
+                </code>
+            </li>    
+
+            <li class="next">
+                <code>
+                    let welcome = ` Hello ${ isWorld ? "World" : "me" } ! ` ;
+                </code>
+            </li>          
+            <li class="next">
+                <code>
+                    console.log(welcome); // Hello World ! 
+                </code>
+            </li>     
+        </ul>
+</section>  
+
+<section class="slide code-show">
+        <h2 style="margin-bottom: 26px;">HTML raw template</h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+<pre>
+<code style="
+line-height: 1.4;
+">
+    let person = {
+        name: "Maya",
+        class: "title",
+        job: "Developer"
+    };
+</code>
+</pre>
+</li>    
+         
+<li class="next">
+    <textarea disabled> `<p class="${person.class}">Hello my name is ${person.name}! I am good ${person.job}!</p>`</textarea>          
+</li>     
+        </ul>
+        <style>
+            .code-show textarea {
+                width: 100%;
+                border: none;
+                font-family: 'Roboto Mono', monospace;
+                color: #000;
+                font-size: 18px;
+                padding: 10px 0;
+                line-height: 1.7;
+                resize: none;
+            }    
+        </style>
+</section> 
+<section class="slide">
+        <h2 style="margin-bottom: 26px;">Default function parameters</h2>
+        <p>
+            Allow named parameters to be initialized with default values if no value or undefined is passed.
+        </p>
+</section>
+<section class="slide">
+        <h2 style="margin-bottom: 26px;">Default function parameters:</h2>
+        <ul style="font-size: 20px;">
+<li class="next">
+    <pre >
+        <code>function multiply(a, b = 1) {</code>
+        <code>  return a * b;</code>
+        <code>}</code>
+    </pre>
+</li>  
+<li class="next">
+        <pre >
+            <code>multiply(5,2);</code>
+            <code><span class="next comment">// 10</span></code>
+        </pre>
+    </li>        
+<li class="next">
+    <pre >
+        <code>multiply(5);</code>
+        <code><span class="next comment">// 5</span></code>
+    </pre>
+</li>   
+    </ul>
+</section>  
+
+
+<section class="slide">
+        <h2 style="margin-bottom: 26px;">Default function parameters:</h2>
+        <ul style="font-size: 20px;">
+<li class="next">
+    <pre >
+        <code>function put(toy, toyBox = []) {</code>
+            <code>toyBox.push(toy);</code>
+            <code>return toyBox;</code>
+        <code>}</code>
+    </pre>
+</li>  
+<li class="next">
+        <pre >
+            <code>console.log(put('Toy Car'));</code>
+            <code><span class="next comment">// ['Toy Car']</span></code>
+        </pre>
+    </li>        
+<li class="next">
+    <pre >
+        <code>console.log(put('Teddy Bear'));</code>
+        <code><span class="next comment">// ['Teddy Bear'], not ['Toy Car','Teddy Bear']</span></code>
+    </pre>
+</li>   
+</ul>
+</section>  
+
+<section class="slide">
+        <h2 style="margin-bottom: 26px;">Rest parameters and spread operator</h2>
+        <p>
+                Javascript's ECMA6 came out with some cool new features; ... is one of these new Javascript functionalities. It can be used in two different ways; as a spread operator OR as a rest parameter
+        </p>
+</section>  
+<section class="slide">
+        <h2 style="margin-bottom: 26px;">What is the difference between Rest and Spread?</h2>
+</section>  
+
+<section class="slide">
+        <h2 style="margin-bottom: 26px;">Rest Parameter [ …rest]:</h2>
+        <p>
+            A function can be called with any number of arguments, no matter how it is defined
+        </p>
+        <ul style="font-size: 20px;">
+<li class="next">
+    <pre >
+        <code>function sumAll(...args) { // args is the name for the array</code>
+            <code>let sum = 0;</code>
+            <code>for (let arg of args) sum += arg;</code>
+            <code>return sum;</code>
+        <code>}</code>
+    </pre>
+</li>   
+ 
+        </ul>
+</section>  
+<section class="slide">
+
+        <ul style="font-size: 20px;">
+<li class="next">
+        <pre >
+            <code>alert( sumAll(1) ); <span class="next comment">// 1</span></code>
+        </pre>
+    </li>   
+    <li class="next">
+            <pre >
+                <code>alert( sumAll(1, 2) );<span class="next comment">// 3</span></code>
+            </pre>
+        </li>  
+        <li class="next">
+                <pre >
+
+                    <code>alert( sumAll(1, 2, 3) );<span class="next comment">// 6</span></code>
+                </pre>
+            </li>   
+        </ul>
+</section> 
+<section class="slide">
+   <ul style="font-size: 20px;">
+<li class="next">
+        <pre >
+            <code>function myFun(a, b, ...manyMoreArgs) {</code>
+                <code>console.log("a", a, "b", b); </code>
+                <code>console.log("manyMoreArgs", manyMoreArgs); </code>
+            <code>}</code>
+        </pre>
+    </li>      
+        </ul>
+</section> 
+
+<section class="slide">
+<ul style="font-size: 20px;">
+<li class="next">
+    <pre >
+        <code> myFun("one", "two", "three", "four", "five", "six");</code>
+    </pre>
+</li>  
+<li class="next">
+<pre >
+<code>
+    <span class="next comment">// Console Output:</span> <br>
+    <span class="next comment">// a, one</span> <br>
+    <span class="next comment">// b, two</span> <br>
+    <span class="next comment">// manyMoreArgs, [three, four, five, six]</span> <br>
+</code>
+</pre>
+</li>    
+</ul>
+</section> 
+
+<section class="slide">
+        <h2 style="margin-bottom: 26px;">Spread syntax</h2>
+        <p>
+                Spread syntax allows an iterable such as an array expression or string to be expanded in places where zero or more arguments (for function calls) or elements (for array literals) are expected, or an object expression to be expanded in places where zero or more key-value pairs (for object literals) are expected.
+        </p>
+</section>  
+
+<section class="slide">
+    <h2>How work spread</h2>
+    <ul style="font-size: 20px;">
+        <li class="next">
+        We have some situation
+        <pre >
+            <code>let arr = [3, 5, 1];</code>
+            <code>alert( Math.max(arr) );<span class="next comment"> // NaN :(</span></code>
+        </pre>
+        </li>   
+         <li class="next">
+            Spread
+        </li>   
+        <li class="next">
+        <pre >
+            <code>let arr = [3, 5, 1];</code>
+            <code>alert( Math.max(...arr) ); <span class="next comment">// 5 (spread turns array into a list of arguments)</span></code>
+        </pre>
+        </li>   
+    </ul>
+</section> 
+
+<section class="slide">
+        <h2>Some spread features</h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+            We can pass multiple iterables this way:
+            <pre >
+                <code>let arr1 = [1, -2, 3, 4];</code>
+                <code>let arr2 = [8, 3, -8, 1];</code>
+                <code>alert( Math.max(...arr1, ...arr2) );<span class="next comment"> // 8</span></code>
+            </pre>
+            </li>    
+            <li class="next">
+            <pre >
+                <code>let arr1 = [1, -2, 3, 4];</code>
+                <code>let arr2 = [8, 3, -8, 1];</code>
+
+                <code>alert( Math.max(1, ...arr1, 2, ...arr2, 25) );<span class="next comment">// 25</span></code>
+            </pre>
+            </li>   
+        </ul>
+    </section> 
+
+    <section class="slide">
+            <h2>Summary</h2>
+            <h4>When we see "..." in the code, it is either rest parameters or the spread operator.</h4>
+            <p>There’s an easy way to distinguish between them:</p>
+            <ul style="font-size: 20px;">
+                <li class="next">
+                        When ... is at the end of function parameters, it’s “rest parameters” and gathers the rest of the list of arguments into an array.
+                </li>   
+                 <li class="next">
+                        When ... occurs in a function call or alike, it’s called a “spread operator” and expands an array into a list.
+                </li>    
+            </ul>
+        </section>    
+        <section class="slide">
+                <h2 style="margin-bottom: 26px;">Understanding Let & Const</h2>
+                <p>
+                        One of the Syntax updates ES6 was the concept of declaring variables with let and const instead of var
+                </p>
+        </section> 
+        
+    <section class="slide">
+            <h2>Problem with var</h2>
+            <ul style="font-size: 20px;">
+                <li class="next">
+                <pre >
+                    <code>var greeter = "hey hi";</code>
+                    <code class="next">var times = 4;</code>
+                    <code class="next">if (times > 3) {</code>
+                    <code class="next">var greeter = "say Hello instead"; </code>
+                    <code class="next">}</code>
+                    <code class="next">console.log(greeter)<span class="next comment">//"say Hello instead"</span></code>
+                </pre>
+                </li>   
+                <li class="next">greeter is redefined to "say Hello instead"</li>  
+            </ul>
+        </section> 
+            
+            
+        <section class="slide">
+            <h2>LET</h2>
+            <p>let is preferred for variable declaration now. It's no surprise as it comes as an improvement to the var declarations. It also solves this problem that was raised in the last example.</p>
+        </section> 
+                        
+            
+        <section class="slide">
+                <h2>Let</h2>
+                <ul style="font-size: 20px;">
+                    <li class="next">
+                    <pre >
+                        <code class="next">let times = 4;</code>
+                        <code class="next">if (times > 3) {</code>
+                        <code class="next">let hello = "say Hello instead";</code>
+                        <code class="next">console.log(hello);//"say Hello instead"</code>
+
+                        <code class="next">}</code>
+                        <code class="next">console.log(hello);<span class="next comment">/ // hello is not defined</span></code>
+                    </pre>
+                    </li>   
+                    <li class="next">We see that using hello outside its block(the curly braces where it was defined) returns an error. This is because let variables are block scoped .</li>  
+                </ul>
+            </section>                 
+            
+            <section class="slide">
+                    <h2>let can be updated but not re-declared.</h2>
+                    <p>Just like var, a variable declared with let can be updated within its scope. Unlikevar, a let variable cannot be re-declared within its scope. So while this will work,</p>
+                    <ul style="font-size: 20px;">
+                        <li class="next">
+                        <pre >
+                            <code class="next">let greeting = "say Hi";</code>
+                            <code class="next">greeting = "say Hello instead";</code>
+                            <code class="next">console.log(greeting);<span class="next comment">// say Hello instead</span></code>
+                        </pre>
+                        </li>   
+                    </ul>
+                </section>              
+                <section class="slide">
+                        <ul style="font-size: 20px;">
+                            <li class="next">
+                                This will return an error.
+                            </li>
+                            <li class="next">
+                            <pre>
+                                    <code class="next">let greeting = "say Hi";</code>
+                                    <code class="next">let greeting = "say Hello instead";</code>
+                                    <code class="next">console.log(greeting);</code>
+                                    <code class="next comment">//error: Identifier 'greeting' has already been declared</code>
+                            </pre>
+
+                            </li>  
+                        </ul>
+                    </section>  
+                <section class="slide">
+                    <p>
+                            However, if the same variable is defined in different scopes, there will be no error.
+                    </p>
+                    <ul style="font-size: 20px;">
+                        <li class="next">
+                        <pre>
+                                <code class="next">let greeting = "say Hi";</code>
+                                <code class="next">if (true) {</code>
+                                <code class="next">let greeting = "say Hello instead";</code>
+                                <code class="next">lconsole.log(greeting);//"say Hello instead"</code>
+                                <code class="next">}</code>
+                                <code class="next">console.log(greeting);</code>
+                                <code class="next comment">//"say Hi"</code>
+                        </pre>
+                        </li>  
+                    </ul>
+                 </section>                        
+                 <section class="slide">
+                    <h2>
+                        CONST
+                    </h2>
+                    <p>
+                        Variables declared with the const maintain constant values. const declarations share some similarities with let declarations. <br>
+                        <strong>Const cannot be updated or re-declared</strong><br>
+                    </p>
+                </section>                     
+                <section class="slide">
+                    <h2>
+                            So if we declare a variable with const, we can neither do this        
+                    </h2>
+                    <ul style="font-size: 20px;">
+                        <li class="next">
+                        <pre>
+                                <code class="next">const greeting = "say Hi";</code>
+                                <code class="next">greeting = "say Hello instead";</code>
+                                <code class="next comment">//error : Assignment to constant variable. </code>
+                        </pre>
+                        </li>  
+                        <li class="next">
+                            or this
+                        </li>
+                        <li class="next">
+                            <pre>
+                                <code class="next">const greeting = "say Hi";</code>
+                                <code class="next">const greeting = "say Hello instead";</code>
+                                <code class="next comment">//error : Identifier 'greeting' has already been declared</code>
+                            </pre>
+                        </li>
+                    </ul>
+                </section>       
+                <section class="slide">
+                        <h2 style="font-size: 24px; line-height: 1.4;">
+                                While a const object cannot be updated, the properties of this objects can be updated.      
+                        </h2>
+                        <ul style="font-size: 20px;">
+                            <li class="next">
+                            <pre>
+                                    <code class="next">const greeting = {</code>
+                                    <code class="next">message : "say Hi",</code>
+                                    <code class="next comment"> }</code>
+                            </pre>
+                            </li>  
+                            <li class="next">
+                                we cannot do this
+                            </li>
+                            <li class="next">
+                                <pre>
+                                    <code class="next">const greeting = {</code>
+                                    <code class="next">words : "Hello",</code>
+                                    <code class="next comment"> }</code>
+                                    <code class="next comment">//error :  Assignment to constant variable. </code>
+                                </pre>
+                            </li>
+                        </ul>
+                    </section>                   
+                    <section class="slide">
+                    <h2>
+                        We can do this    
+                    </h2>
+                    <ul style="font-size: 20px;">
+                        <li class="next">
+                        <pre>
+                                <code class="next">greeting.message = "say Hello instead";  </code>
+                        </pre>
+                        </li>  
+                        <li class="next">This will update the value of greeting.message without returning errors.</li>
+                    </ul>
+                </section> 
+                <section class="slide">
+                        <h2>
+                            Arrow function expressions
+                        </h2>
+<p>                An arrow function expression is a syntactically compact alternative to a regular function expression, although without its own bindings to the this, arguments, super, or new.target keywords. Arrow function expressions are ill suited as methods, and they cannot be used as constructors.</p>
+                    </section>     
+                
+                    <section class="slide">
+                            <h2>
+                                Arrow functions allow us to write shorter function syntax:
+                            </h2>
+                            <ul style="font-size: 20px;">
+                                <li class="next">
+                                        Before:
+                                </li>
+                                    <li class="next">
+                                    <pre>
+                                        <code class="next">hello = function() {</code>
+                                        <code class="next">return "Hello World!";</code>
+                                        <code class="next">}</code>
+                                    </pre>
+                                    </li>  
+                                    <li class="next">
+                                        With Arrow Function:
+                                    </li>
+                                    <pre>
+                                        <code class="next">hello = () => {</code>
+                                        <code class="next">return "Hello World!";</code>
+                                        <code class="next">}</code>
+                                    </pre>
+                                </ul>
+                    </section>   
+
+
+                    <section class="slide">
+                            <h2>
+                                    It gets shorter!
+                            </h2>
+                            <ul style="font-size: 20px;">
+                                <li class="next">
+                                    If the function has only one statement, and the statement returns a value, you can remove the brackets and the return keyword:
+                                </li>
+                                <li class="next">Arrow Functions Return Value by Default:</li>
+                                <li class="next">
+                                    <pre>
+                                        <code class="next">hello = () => "Hello World!";</code>
+                                    </pre>
+                                </li>  
+                                </ul>
+                    </section>   
+<section class="slide">
+        <h2>
+                Where to use arrow functions:
+        </h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                Use <strong>function</strong> in the global scope and for Object.prototype properties.
+            </li>
+            <li class="next">Use <strong>class</strong>  for object constructors.</li>
+            <li class="next">Use <strong>=></strong>  everywhere else.</li>
+            </ul>
+</section> 
+                    
+
+   <section class="slide">
+        <h2>
+            What is a Promise?
+        </h2>
+        <p>
+            A promise is an object that may produce a single value some time in the future: either a resolved value, or a reason that it’s not resolved (e.g., a network error occurred). A promise may be in one of 3 possible states: fulfilled, rejected, or pending. Promise users can attach callbacks to handle the fulfilled value or the reason for rejection.
+        </p>                             
+   </section>   
+
+   <section class="slide">
+        <h2>
+            Understanding Promises 
+        </h2>
+        <p>
+                "Imagine you are a kid. Your mom promises you that she'll get you a new phone next week." <br>
+
+                You don't know if you will get that phone until next week. Your mom can either really buy you a brand new phone, or stand you up and withhold the phone if she is not happy :(.
+        </p>                             
+   </section>                              
+   <section class="slide">
+        <h2>
+            That is a promise. A promise has 3 states. They are:
+        </h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                Pending: You don't know if you will get that phone
+            </li>
+            <li class="next">
+                Fulfilled: Mom is happy, she buys you a brand new phone
+            </li>
+            <li class="next">Rejected: Your mom is happy, she withholds the phone</li>
+            </ul>
+</section>            
+<section class="slide">
+        <h2>
+            How promise work:
+        </h2>
+        <div class="center-block">
+            <img src="pictures/promise.png" alt="promise scheme">
+        </div>
+        <style>
+            .center-block{
+                text-align: center;
+                width: 800px;
+                margin: 0 auto;
+            }
+            .center-block img{
+                width: 100%;
+            }
+        </style>
+</section>       
+<section class="slide">
+        <h2>
+            Promise function syntax:
+        </h2>
+        <ul style="font-size: 20px;">
+                <li class="next">
+                <pre>
+                    <code class="next">let promise = new Promise(function(resolve, reject) {</code>
+                    <code class="next">// executor (the producing code, "singer")</code>
+                    <code class="next"> });</code>
+                </pre>
+                </li>  
+ 
+            </ul>
+</section>
+<section class="slide">
+        <h2>
+            Promise function syntax:
+        </h2>
+        <ul style="font-size: 20px;">
+                <li class="next">
+                <pre>
+                    <code class="next">let promise = new Promise(function(resolve, reject) {</code>
+                    <code class="next">setTimeout(() => resolve("done!"), 1000);</code>
+                    <code class="next"> });</code>
+
+                    <code class="next">// resolve runs the first function in .then</code>
+                   
+                        <code class="next"> promise.then(</code>
+                        <code class="next">result => alert(result), // shows "done!" after 1 second</code>
+                        <code class="next">error => alert(error) // doesn't run</code>
+                        <code class="next">);</code>
+                </pre>
+                </li>  
+ 
+            </ul>
+</section>                    
+
+<section class="slide">
+        <h2>
+                Destructuring assignment
+        </h2>
+        <p>
+            The two most used data structures in JavaScript are Object and Array.    
+            <br>
+            Destructuring assignment is a special syntax that allows us to “unpack” arrays or objects into a bunch of variables, as sometimes that’s more convenient. Destructuring also works great with complex functions that have a lot of parameters, default values, and so on.
+        </p>                             
+   </section>      
+  
+   <section class="slide">
+        <h2>
+            Destructuring array syntax:
+        </h2>
+        <ul style="font-size: 20px;">
+
+                <li class="next">
+                <pre>
+                    <code class="next">// we have an array with the name and surname</code>
+                    <code class="next">let arr = ["Super", "Mario"]</code>
+                    <code class="next">// destructuring assignment</code>
+                    <code class="next">// sets firstName = arr[0]</code>
+                    <code class="next">// and surname = arr[1]</code>
+                    <code class="next">let [firstName, surname] = arr;</code>
+                    <code class="next">alert(firstName); //Super </code>
+                    <code class="next">alert(surname);  //Mario</code>
+                </pre>
+                </li>  
+            </ul>
+</section> 
+<section class="slide">
+        <h2>
+                It’s just a shorter way to write:
+        </h2>
+        <ul style="font-size: 20px;">
+
+                <li class="next">
+                <pre>
+                    <code class="next">// let [firstName, surname] = arr;</code>
+                    <code class="next">let firstName = arr[0];</code>
+                    <code class="next">let surname = arr[1];</code>
+                </pre>
+                </li>  
+            </ul>
+</section> 
+<section class="slide">
+        <h2>
+            Object destructuring
+        </h2>
+        <ul style="font-size: 20px;">
+<li class="next">The destructuring assignment also works with objects.</li>
+<li class="next">The basic syntax is:</li>
+
+                <li class="next">
+                <pre>
+                    <code class="next">let {var1, var2} = {var1:…, var2:…}</code> 
+                </pre>
+                </li>  
+            </ul>
+</section> 
+<section class="slide">
+        <h2>
+            Object destructuring
+        </h2>
+        <ul style="font-size: 20px;">
+                <li class="next">
+                <pre>
+                    <code class="next">let options = {</code> 
+                    <code class="next">width: 100,</code> 
+                    <code class="next">height: 200</code> 
+                    <code class="next">};</code> 
+                    <code class="next">let {width, height} = options;</code> 
+                    <code class="next">alert(width);  // 100</code> 
+                    <code class="next">alert(height); // 200 </code> 
+                </pre>
+                </li>  
+            </ul>
+</section> 
+
+<section class="slide">
+        <h2>
+            Object destructuring
+        </h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                    If we want to assign a property to a variable with another name
+            </li>
+                <li class="next">
+                <pre>
+                    <code class="next">let options = {</code> 
+                    <code class="next">width: 100,</code> 
+                    <code class="next">height: 200</code> 
+                    <code class="next">};</code> 
+                    <code class="next">// { sourceProperty: targetVariable }</code> 
+                    <code class="next">let {width: w, height: h} = options;</code> 
+                    <code class="next">alert(w);      // 100</code> 
+                    <code class="next">alert(h);      // 200</code> 
+                </pre>
+                </li>  
+            </ul>
+</section> 
+<section class="slide">
+        <h2>
+                Destructuring assignment
+        </h2>
+        <p>
+            The ability to create JavaScript objects using literal notation is powerful. New features introduced from ES2015 (ES6) make object handling even easier in all modern browsers (not IE) and Node.js.   
+            <br>
+
+            Creating objects in some languages can be expensive in terms of development time and processing power when a class must be declared before anything can be achieved. In JavaScript, it’s easy to create objects on the fly. For example:
+        </p>                             
+   </section>  
+   <section class="slide">
+        <h2>
+            Object Initialization From Variables
+        </h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                    Objects’ properties are often created from variables with the same name. For example:
+            </li>
+                <li class="next">
+                <pre>
+                    <code class="next">// ES5 code</code> 
+                    <code class="next">var</code> 
+                    <code class="next">a = 1, b = 2, c = 3;</code> 
+                    <code class="next">obj = {</code> 
+                    <code class="next">a: a,</code> 
+                    <code class="next">b: b,</code> 
+                    <code class="next">};</code> 
+                    <code class="next">// obj.a = 1, obj.b = 2</code> 
+                </pre>
+                </li>  
+            </ul>
+</section> 
+
+<section class="slide">
+        <h2>
+                There’s no need for nasty repetition in ES6!…
+        </h2>
+        <ul style="font-size: 20px;">
+                <li class="next">
+                <pre>
+                    <code class="next">// ES6 code</code> 
+                    <code class="next">const a = 1, b = 2</code> 
+                    <code class="next">obj = {</code> 
+                    <code class="next">a</code> 
+                    <code class="next">b</code> 
+                    <code class="next">};</code> 
+                    <code class="next">// obj.a = 1, obj.b = 2</code> 
+                </pre>
+                </li>  
+            </ul>
+</section> 
+
+
+<section class="slide">
+        <h2>
+                Parsing Returned Objects
+        </h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                    Functions can only return one value, but that could be an object with hundreds of properties and/or methods. In ES5, it’s necessary to obtain the returned object, then extract values accordingly. For example:
+            </li>
+            </ul>
+</section> 
+
+<section class="slide">
+        <h2>
+                Parsing Returned Objects
+        </h2>
+        <ul style="font-size: 20px;">
+                <li class="next">
+                <pre>
+                    <code class="next">// ES5 code</code> 
+                    <code class="next">var</code> 
+                    <code class="next">obj = getObject(),</code> 
+                    <code class="next">one = obj.one,</code> 
+                    <code class="next">two = obj.two;</code> 
+                </pre>
+                </li>  
+            </ul>
+</section> 
+
+<section class="slide">
+        <h2>
+                ES6 destructuring makes this process simpler
+        </h2>
+        <ul style="font-size: 20px;">
+                <li class="next">
+                <pre>
+                    <code class="next">// ES6 code</code> 
+                    <code class="next">const { one, two} = getObject();</code> 
+                </pre>
+                </li>  
+            </ul>
+</section> 
+
+<section class="slide">
+        <h2>
+                ES6 in action
+        </h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                    For example, if you only required the File System (fs) methods readFile and writeFile, you could reference them directly. For example:
+            </li>
+                <li class="next">
+                <pre>
+                    <code class="next">// ES6 Node.js</code> 
+                    <code class="next">const { readFile, writeFile } = require('fs');</code> 
+                    <code class="next">readFile('file.txt', (err, data) => {</code> 
+                    <code class="next">console.log(err || data);</code> 
+                    <code class="next">});</code> 
+
+                </pre>
+                </li>  
+            </ul>
+</section> 
+
+<section class="slide">
+        <h2>
+                JavaScript Classes
+        </h2>
+        <p>
+            <strong>ES6, also known as ECMAScript2015, introduced classes. </strong>
+            <br>
+            A class is a type of function, but instead of using the keyword function to initiate it, we use the keyword class, and the properties is assigned inside a constructor() method.
+            <br>
+            <strong>Class Definition</strong>
+            <br>
+            Use the keyword class to create a class, and always add a constructor method.
+The constructor method is called each time the class object is initialized.
+        </p>                             
+   </section>  
+
+   <section class="slide">
+        <h2>
+                Example
+        </h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                    A simple class definition for a class named "Car":
+            </li>
+                <li class="next">
+                <pre>
+                    <code class="next">class Car {</code> 
+                    <code class="next">constructor(brand) {</code> 
+                    <code class="next">this.carname = brand;</code> 
+                    <code class="next">}</code> 
+                    <code class="next">}</code> 
+                </pre>
+                </li>  
+                <li class="next">
+                        Now you can create objects using the Car class:
+                </li>
+            </ul>
+</section> 
+   
+<section class="slide">
+        <h2>
+                Example
+        </h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                    A simple class definition for a class named "Car":
+            </li>
+                <li class="next">
+                <pre>
+                    <code class="next">class Car {</code> 
+                    <code class="next">constructor(brand) {</code> 
+                    <code class="next">this.carname = brand;</code> 
+                    <code class="next">}</code> 
+                    <code class="next">}</code> 
+                </pre>
+                </li>  
+                <li class="next">
+                        Now you can create objects using the Car class:
+                </li>
+            </ul>
+</section> 
+
+<section class="slide">
+        <h2>
+                Example
+        </h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                    Create an object called "mycar" based on the Car class:
+            </li>
+                <li class="next">
+                <pre>
+                    <code class="next">class Car {</code> 
+                    <code class="next">constructor(brand) {</code> 
+                    <code class="next">this.carname = brand;</code> 
+                    <code class="next">}</code> 
+                    <code class="next">}</code> 
+                    <code class="next">mycar = new Car("Ford");</code> 
+
+                </pre>
+                </li>  
+            </ul>
+</section> 
+
+<section class="slide">
+        <h2>
+                Methods
+        </h2>
+        <p>
+
+            The constructor method is special, it is where you initialize properties, it is called automatically when a class is initiated, and it has to have the exact name "constructor", in fact, if you do not have a constructor method, JavaScript will add an invisible and empty constructor method.
+
+            <br>
+            You are also free to make your own methods, the syntax should be familiar:
+        </p>                             
+   </section>  
+
+   <section class="slide">
+        <h2>
+                Example
+        </h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                    Create a method named "present":
+            </li>
+                <li class="next">
+                <pre>
+                    <code class="next">class Car {</code> 
+                    <code class="next">constructor(brand) {</code> 
+                    <code class="next">this.carname = brand;</code> 
+                    <code class="next">present() {</code> 
+                    <code class="next">return "I have a " + this.carname;</code> 
+                    <code class="next">}</code> 
+                    <code class="next">}</code> 
+                </pre>
+                </li>  
+            </ul>
+</section> 
+<section class="slide">
+        <h2>
+                Static Methods
+        </h2>
+        <p>
+                Static methods are defined on the class itself, and not on the prototype.
+
+            <br>
+            That means you cannot call a static method on the object (mycar), but on the class (Car):
+
+
+        </p>                             
+   </section>  
+
+
+   <section class="slide">
+        <h2>
+                Example
+        </h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                    Create a static method and call it on the class:
+            </li>
+                <li class="next">
+                <pre>
+                    <code class="next">class Car {</code> 
+                    <code class="next">constructor(brand) {</code> 
+                    <code class="next">this.carname = brand;</code> 
+                    <code class="next">}</code> 
+                    <code class="next">static hello() {</code> 
+                    <code class="next">return "Hello!!";</code> 
+                    <code class="next">}</code> 
+                    <code class="next">}</code> 
+
+                </pre>
+                </li>  
+            </ul>
+</section> 
+
+<section class="slide">
+        <h2>
+                Introduction to ES6 modules
+        </h2>
+        <p>
+                In JavaScript, the word “modules” refers to small units of independent, reusable code. They are the foundation of many JavaScript design patterns and are critically necessary when building any substantial JavaScript-based application.
+
+            <br>
+            In simpler terms, modules help you to write code in your module and expose only those parts of the code that should be accessed by other parts of your code.
+
+
+        </p>                             
+   </section>  
+
+   <section class="slide">
+        <h2>
+                What exactly is a module?
+        </h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                    Each module is a piece of code that is executed once a JavaScript file is loaded. 
+            </li>
+            <li class="next">
+              
+In that code, there may be declarations (variables, functions, classes e.t.c).
+                </li>
+                <li class="next">
+                        By default, every declaration in that file stay local to that module and cannot be accessed in other modules unless the module file exports them.
+                    </li>
+            </ul>
+</section> 
+
+
+   <section class="slide">
+        <h2>
+                How to use ES6 modules
+        </h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                    let's create three files, (app.js ,math.js and max.js )
+            </li>
+                <li class="next">
+                <pre>
+                    <code class="next">//In math.js , let's write a basic arithmetic algorithm</code> 
+                    <code class="next">let sumAll = (a, b) => {return a + b;}</code> 
+                    <code class="next">let subtractAll = (a, b) => {return a - b;}</code> 
+                    <code class="next">let divideAll = (a, b) => {return a / b;}</code> 
+                    <code class="next">let multiplyAll = (a, b) => {return a * b;}</code> 
+                    <code class="next">let findModulus = (a, b) => {return a % b;}</code> 
+                </pre>
+                </li>  
+            </ul>
+</section> 
+
+<section class="slide">
+        <h2>
+                How to use ES6 modules
+        </h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                    Now to make this module accessible to other parts of our code, we need to export them. There are several ways of doing this;
+            </li>
+                <li class="next">
+                <pre>
+                    <code class="next">export {sumAll, subtractAll, divideAll, multiplyAll, findModulus};</code> 
+                </pre>
+                </li>  
+            </ul>
+</section> 
+
+
+<section class="slide">
+        <h2>
+                How to use ES6 modules
+        </h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                    Now to use our exported modules, we need to import them in app.js There are several ways of doing this also;
+            </li>
+            <li class="next">
+                    You can import individually
+            </li>
+                <li class="next">
+                <pre>
+                    <code class="next">import {sumAll} from './math.js';</code> 
+                </pre>
+                </li>  
+                <li class="next">
+                        Let's test our import
+                </li>
+                <li class="next">
+                        <pre>
+                            <code class="next">console.log(sumAll(9, 8)); //17</code> 
+                        </pre>
+                        </li> 
+            </ul>
+</section> 
+<section class="slide">
+        <h2>
+                How to use ES6 modules
+        </h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                    You can import multiple modules at once:
+            </li>
+
+                <li class="next">
+                <pre>
+                    <code class="next">import {sumAll, subtractAll, divideAll} from './math.js';</code> 
+                </pre>
+                </li>  
+                
+            </ul>
+</section> 
+
+<section class="slide">
+        <h2>
+                How to use ES6 modules
+        </h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                    You can import modules as aliases
+            </li>
+
+                <li class="next">
+                <pre>
+                    <code class="next">import * as math from './math.js';</code> 
+                </pre>
+                </li>  
+                <li class="next">
+                        Here we have imported all the modules in math.js and assigned them to the alias math . To use this imported module we do this:
+                </li>
+                <li class="next">
+                        <pre>
+                            <code class="next">console.log(math.sumAll(50, 10)); // 60</code> 
+                            <code class="next">console.log(math.subtractAll(50, 10)); // 40</code> 
+                            <code class="next">console.log(math.multiplyAll(50, 10)); // 500</code> 
+                        </pre>
+                        </li>  
+            </ul>
+</section> 
+
+<section class="slide">
+        <h2>
+                Some Advantages of using modules
+        </h2>
+        <ul style="font-size: 20px;">
+            <li class="next">
+                    Code can be split into smaller files of self-contained functionality.
+Multiple scripts can be concatenated thereby increasing performance.
+Debugging becomes easier.
+            </li>
+
+                <li class="next">
+                        Any code referencing a module understands it is a dependency. If the module file is changed or moved, the problem is immediately obvious.
+                </li>  
+                <li class="next">
+                        Modules (usually) helps eradicate naming conflicts. Function sumAll() in module1 cannot clash with Function sumAll() in module2. Aliases are very useful here, it becomes module1.sumAll() and module2.sumAll().
+                </li>
+                <li class="next">
+                        ES6 Modules are always executed in strict mode, so there is no need for ‘use strict’ .
+                        </li>  
+                        <li class="next">ES6 modules help you to organize your code better</li>
+            </ul>
+</section> 
 
     <div class="progress"></div>
 
-    <script src="node_modules/shower-core/shower.min.js"></script>
-    <!-- Copyright © 3000 Yours Truly, Famous Inc. -->
+    <script src="shower/shower.min.js"></script>
 
 </body>
 </html>
